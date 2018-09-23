@@ -1,0 +1,38 @@
+.login-card-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+}
+
+.login-card {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 40px;
+}
+
+.login-card-content{
+    width: 100%;
+}
+
+.login-field {
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+}
+
+.login-button-google {
+    width:100%;
+    margin: 10px 0 0 0 !important;
+}
