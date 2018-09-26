@@ -11,7 +11,7 @@ export class AuthService {
   constructor(public afAuth: AngularFireAuth) {}
 
   doGoogleLogin() {
-    return new Promise<any>((resolve, reject) => {
+    return new Promise<any>( (resolve) => {
       const provider = new auth.GoogleAuthProvider();
       provider.addScope('profile');
       provider.addScope('email');
@@ -25,5 +25,23 @@ export class AuthService {
 
   doGoogleLogout() {
     this.afAuth.auth.signOut();
+  }
+
+  doEmailLogin(email: string, password: string) {
+    return new Promise<any>((resolve) => {
+      this.afAuth.auth
+      .signInWithEmailAndPassword(email, password).then(res => {
+        resolve(res);
+      });
+    });
+  }
+
+  createUserWithEmail(email: string, password: string) {
+    return new Promise<any>((resolve) => {
+      this.afAuth.auth
+      .createUserWithEmailAndPassword(email,password).then(res => {
+        resolve(res);
+      });
+    });
   }
 }

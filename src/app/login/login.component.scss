@@ -36,3 +36,14 @@
     width:100%;
     margin: 10px 0 0 0 !important;
 }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    background-size: cover;
+}

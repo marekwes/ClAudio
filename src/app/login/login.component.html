@@ -1,4 +1,7 @@
 <div class="login-card-container">
+  <video autoplay muted loop id="myVideo">
+    <source src="/assets/videos/background.mp4" type="video/mp4">
+  </video>
   <mat-card class="login-card">
     <mat-card-header>
       <h3 class="mat-h2">Login</h3>
@@ -6,26 +9,26 @@
     <mat-card-content class="login-card-content">
       <form>
         <mat-form-field class="login-field">
-          <input matInput placeholder="Username" name="username" required>
+          <input matInput #email placeholder="Email" name="email" required>
         </mat-form-field>
         <mat-form-field class="login-field">
-          <input matInput placeholder="Password" type="password" name="password" required>
+          <input matInput #password placeholder="Password" type="password" name="password" required>
         </mat-form-field>
       </form>
       <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
     </mat-card-content>
     <mat-card-actions class="login-button">
-      <button class="login-button" mat-raised-button (click)="login()" color="primary">Login</button>
-      <button class="login-button-google" mat-raised-button (click)="login()" color="primary">Login with Google</button>
+      <button class="login-button" mat-raised-button (click)="loginWithEmail(email.value, password.value)" color="primary">Login</button>
+      <button class="login-button-google" mat-raised-button (click)="loginWithGoogle()" color="primary">Login with Google</button>
     </mat-card-actions>
   </mat-card>
 </div>
 
-<div *ngIf="afAuth.user | async as user; else showLogin">
+<!-- <div *ngIf="afAuth.user | async as user; else showLogin">
   <h1>Hello {{ user.displayName }}!</h1>
   <button (click)="logout()">Logout</button>
 </div>
 <ng-template #showLogin>
   <p>Please login.</p>
   <button (click)="login()">Login with Google</button>
-</ng-template>
+</ng-template> -->
